@@ -14,4 +14,9 @@ class SafeDeleteFunctionalityCheck(TestCase):
         )
 
     def test_latest_works(self):
-        self.assertEqual(self.leave_obj, Leave.objects.latest('pk'))
+        Leave.objects.latest('type')
+        Leave.objects.latest('pk')
+
+    def test_earliest_works(self):
+        Leave.objects.earliest('type')
+        Leave.objects.earliest('pk')
